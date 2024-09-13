@@ -3,6 +3,22 @@ import { getSkills } from './skills';
 import { ContractType, type Experience } from '../types';
 
 export const items: Array<Experience> = [
+	{
+		slug: 'aspiring-fullstack-dev',
+		company: 'University Student',
+		description: 'Along with my general CS studies, learning and experimenting with modern web technologies.',
+		contract: ContractType.SelfEmployed,
+		type: 'Software Development',
+		location: 'University of Piraeus',
+		period: { from: new Date('2020-10') }, 
+		skills: getSkills('svelte', 'tailwind', 'js', 'html', 'css', 'ts','PostgreSQL', 'Prisma ORM'),
+		name: 'Aspiring Fullstack Developer',
+		color: 'blue',
+		links: [],
+		logo: Assets.Unknown,
+		shortDescription: 'Along with my general CS studies, learning and experimenting with modern web technologies.'
+	}
+	
 	// {
 	// 	slug: 'open-sourcer',
 	// 	company: 'Self-employed',

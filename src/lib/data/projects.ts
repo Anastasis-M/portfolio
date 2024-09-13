@@ -3,6 +3,22 @@ import { getSkills } from './skills';
 import type { Project } from '../types';
 
 export const items: Array<Project> = [
+	{
+		slug: 'slick-portfolio-svelte',
+		color: '#ff3e00',
+		description:
+		"Adjusted Riadh Adrani's svelte portfolio template to my needs.",
+		shortDescription:
+		"Adjusted Riadh Adrani's svelte portfolio template to my needs.",
+		links: [{ to: 'https://github.com/RiadhAdrani/slick-portfolio-svelte', label: 'GitHub' }],
+		logo: Assets.Unknown,
+		name: 'Slick Portfolio',
+		period: {
+			from: new Date('2024-09-11')
+		},
+		skills: getSkills('svelte', 'ts', 'tailwind'),
+		type: 'Personal Project'
+	},
 	// {
 	// 	slug: 'slick-portfolio-angular',
 	// 	color: '#5e95e3',

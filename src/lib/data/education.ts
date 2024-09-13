@@ -2,6 +2,18 @@ import Assets from './assets';
 import type { Education } from '../types';
 
 export const items: Array<Education> = [
+	{
+		degree: 'Bachelor of Informatics',
+		description: 'Currently pursuing a Bachelor\'s degree in Informatics with a personal focus on software development and web technologies.',
+		location: 'Piraeus, Greece', // Replace with the actual location
+		logo: Assets.Unknown, 
+		name: 'Bachelor\'s in Informatics',
+		organization: 'University of Piraeus',
+		period: { from: new Date('2020-10')},
+		shortDescription: '',
+		slug: 'informatics-degree',
+		subjects: ['JavaScript', 'Svelte', 'Tailwind', 'HTML', 'CSS', 'Databases', 'Algorithms', 'Data Structures', 'Java', 'Python', 'C++', 'C#'] // Replace or add more relevant subjects
+	}
 	// {
 	// 	degree: 'Bachelor degree of Computer Science',
 	// 	description: '',
