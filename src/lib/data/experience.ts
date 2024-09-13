@@ -5,17 +5,17 @@ import { ContractType, type Experience } from '../types';
 export const items: Array<Experience> = [
 	{
 		slug: 'aspiring-fullstack-dev',
-		company: 'University Student',
+		company: 'University of Piraeus',
 		description: 'Along with my general CS studies, learning and experimenting with modern web technologies.',
 		contract: ContractType.SelfEmployed,
 		type: 'Software Development',
-		location: 'University of Piraeus',
+		location: 'Piraeus, Greece',
 		period: { from: new Date('2020-10') }, 
 		skills: getSkills('svelte', 'tailwind', 'js', 'html', 'css', 'ts','PostgreSQL', 'Prisma ORM'),
 		name: 'Aspiring Fullstack Developer',
-		color: 'blue',
-		links: [],
-		logo: Assets.Unknown,
+		color: 'red',
+		links: [ { to: 'https://cs.unipi.gr/en', label: 'University of Piraeus', newTab: true }],
+		logo: Assets.Unipi_logo,
 		shortDescription: 'Along with my general CS studies, learning and experimenting with modern web technologies.'
 	}
 	
@@ -42,9 +42,7 @@ export const items: Array<Experience> = [
 	// 	type: 'Software Development',
 	// 	location: 'Home',
 	// 	period: { from: new Date() },
-	// 	skills: getSkills('svelte', 'ts', 'sass', 'css', 'html', 'js'),
-	// 	name: 'Freelancer',
-	// 	color: 'blue',
+	// 	skills:'blue',
 	// 	links: [],
 	// 	logo: Assets.Unknown,
 	// 	shortDescription: 'Creating awesome applications for customers.'

@@ -5,8 +5,8 @@ export const items: Array<Education> = [
 	{
 		degree: 'Bachelor of Informatics',
 		description: 'Currently pursuing a Bachelor\'s degree in Informatics with a personal focus on software development and web technologies.',
-		location: 'Piraeus, Greece', // Replace with the actual location
-		logo: Assets.Unknown, 
+		location: 'Piraeus, Greece',
+		logo: Assets.Unipi_logo, 
 		name: 'Bachelor\'s in Informatics',
 		organization: 'University of Piraeus',
 		period: { from: new Date('2020-10')},

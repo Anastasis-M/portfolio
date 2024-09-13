@@ -72,6 +72,7 @@ const Assets = {
 	Ruvy: a('ruvy.svg'),
 	Postcss: a('postcss.svg'),
 	Prisma: a('prisma.svg'),
+	Unipi_logo: a('unipi_logo.png'),
 };
 
 export default Assets;
