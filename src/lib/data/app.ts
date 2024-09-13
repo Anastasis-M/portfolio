@@ -1,1 +1,1 @@
-export const titleSuffix = "anstasis.dev";
+export const titleSuffix = "anastasis.dev";
