@@ -4,14 +4,14 @@ import type { Education } from '../types';
 export const items: Array<Education> = [
 	{
 		degree: 'Bachelor of Informatics',
-		description: 'Currently pursuing a Bachelor\'s degree in Informatics with a personal focus on software development and web technologies.',
+		description: 'Gained foundational knowledge in computer science, software development, and information systems, with hands-on experience in programming, databases, and algorithms. Focused more on assignments about web development.',
 		location: 'Piraeus, Greece',
 		logo: Assets.Unipi_logo, 
 		name: 'Bachelor\'s in Informatics',
 		organization: 'University of Piraeus',
 		period: { from: new Date('2020-10')},
 		shortDescription: '',
-		slug: 'informatics-degree',
+		slug: 'informatics-bcs',
 		subjects: ['JavaScript', 'Svelte', 'Tailwind', 'HTML', 'CSS', 'Databases', 'Algorithms', 'Data Structures', 'Java', 'Python', 'C++', 'C#'] // Replace or add more relevant subjects
 	}
 	// {

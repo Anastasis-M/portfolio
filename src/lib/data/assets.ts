@@ -73,6 +73,9 @@ const Assets = {
 	Postcss: a('postcss.svg'),
 	Prisma: a('prisma.svg'),
 	Unipi_logo: a('unipi_logo.png'),
+	Profile: a('profile.png'),
+	Supabase: a('supabase-logo-icon.png'),
+	OpenLayers: a('openlayers-logo.svg'),
 };
 
 export default Assets;

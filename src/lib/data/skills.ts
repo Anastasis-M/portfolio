@@ -105,7 +105,6 @@ export const items = [
 		name: 'Prisma ORM',
 		category: 'orm',
 	}),
-	//Postgres
 	defineSkill({
 		slug: 'PostgreSQL',
 		color: 'blue',
@@ -113,7 +112,23 @@ export const items = [
 		logo: Assets.PostgreSQL,
 		name: 'PostgreSQL',
 		category: 'db',
-	})
+	}),
+	defineSkill({
+		slug: 'SupaBase',
+		color: 'green',
+		description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent orci enim, congue sit amet justo eget, consequat sollicitudin libero.',
+		logo: Assets.Supabase,
+		name: 'SupaBase',
+		category: 'db',
+	}),
+	defineSkill({
+		slug: 'OpenLayers',
+		color: 'blue',
+		description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent orci enim, congue sit amet justo eget, consequat sollicitudin libero.',
+		logo: Assets.OpenLayers,
+		name: 'OpenLayers',
+		category: 'library',
+	}),
 ] as const;
 
 export const title = 'Skills';

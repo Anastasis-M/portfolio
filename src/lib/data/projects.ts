@@ -4,21 +4,38 @@ import type { Project } from '../types';
 
 export const items: Array<Project> = [
 	{
-		slug: 'slick-portfolio-svelte',
+		slug: 'portfolio-site',
 		color: '#ff3e00',
 		description:
-		"Adjusted Riadh Adrani's svelte portfolio template to my needs.",
-		shortDescription:
-		"Adjusted Riadh Adrani's svelte portfolio template to my needs.",
+			"When I was browsing through various sveltekit projects I found Riadh Adrani's svelte portfolio template. I liked the overall design and the way it was built, so I decided to adjust it to my needs. I updated some packeges added my information and images. In the future I may add more funtionality.",
+		shortDescription: "Adjusted Riadh Adrani's svelte portfolio template to my needs.",
 		links: [{ to: 'https://github.com/RiadhAdrani/slick-portfolio-svelte', label: 'GitHub' }],
-		logo: Assets.Unknown,
-		name: 'Slick Portfolio',
+		logo: Assets.Profile,
+		name: 'Portfolio site',
 		period: {
 			from: new Date('2024-09-11')
 		},
 		skills: getSkills('svelte', 'ts', 'tailwind'),
 		type: 'Personal Project'
 	},
+	{
+		slug: 'reforestation-platform',
+		color: '#15803d',
+		description:
+			'More when a prototype is ready...',
+		shortDescription:
+			'More when a prototype is ready...',
+		links: [
+			{ to: '', label: 'Website' }
+		],
+		logo: Assets.Unknown,
+		name: 'Reforestation Platform',
+		period: {
+			from: new Date('2024-07-21')
+		},
+		skills: getSkills('svelte', 'ts', 'tailwind', 'Prisma ORM', 'PostgreSQL', 'SupaBase', 'OpenLayers'),
+		type: 'Personal Project'
+	}
 	// {
 	// 	slug: 'slick-portfolio-angular',
 	// 	color: '#5e95e3',
