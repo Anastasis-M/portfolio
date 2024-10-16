@@ -76,6 +76,7 @@ const Assets = {
 	Profile: a('profile.png'),
 	Supabase: a('supabase-logo-icon.png'),
 	OpenLayers: a('openlayers-logo.svg'),
+	MusicSchoolLogo: a('high-school-logo.png')
 };
 
 export default Assets;

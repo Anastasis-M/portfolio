@@ -13,6 +13,18 @@ export const items: Array<Education> = [
 		shortDescription: '',
 		slug: 'informatics-bcs',
 		subjects: ['JavaScript', 'Svelte', 'Tailwind', 'HTML', 'CSS', 'Databases', 'Algorithms', 'Data Structures', 'Java', 'Python', 'C++', 'C#'] // Replace or add more relevant subjects
+	},
+	{
+		degree: 'Music High School Diploma',
+		description: 'Completed a well-rounded education combining traditional academic subjects with specialized music training, including music theory, performance, and ensemble work.',
+		location: 'Chios, Greece',
+		logo: Assets.MusicSchoolLogo, 
+		name: 'Music High School Diploma',
+		organization: 'Music School of Chios',
+		period: { from: new Date('2014-01-02'), to: new Date('2020')},
+		shortDescription: 'Completed a well-rounded education combining traditional academic subjects with specialized music training, including music theory, performance, and ensemble work.',
+		slug: 'music-high-school',
+		subjects: [] // Replace or add more relevant subjects
 	}
 	// {
 	// 	degree: 'Bachelor degree of Computer Science',

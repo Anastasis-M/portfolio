@@ -54,13 +54,18 @@
 					<div class="col flex-1 items-stretch">
 						<Card>
 							<div class="flex-1 col gap-2 items-stretch">
-								<img
-									src={getAssetURL(education.logo)}
-									alt={education.organization}
-									height="50"
-									width="50"
-									class="mb-5"
-								/>
+								<div class="">
+									<div class="p-1 mb-5 rounded-[15px] bg-white w-fit overflow-hidden flex items-center justify-center">
+										<img
+											src={getAssetURL(education.logo)}
+											alt={education.organization}
+											height="50"
+											width="50"
+											class="bg-white"
+										/>
+									</div>
+								</div>
+
 								<div class="text-[1.3em]">{education.degree}</div>
 								<div>{education.organization}</div>
 								<div class="col text-[0.9em]">
