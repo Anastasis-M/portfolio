@@ -12,7 +12,7 @@ export const items: Array<Education> = [
 		period: { from: new Date('2020-10')},
 		shortDescription: '',
 		slug: 'informatics-bcs',
-		subjects: ['JavaScript', 'Svelte', 'Tailwind', 'HTML', 'CSS', 'Databases', 'Algorithms', 'Data Structures', 'Java', 'Python', 'C++', 'C#'] // Replace or add more relevant subjects
+		subjects: ['JavaScript', 'Svelte', 'Tailwind', 'HTML', 'CSS', 'Databases', 'Algorithms', 'Data Structures', 'Java', 'Python', 'C++', 'C#', 'Unity'] // Replace or add more relevant subjects
 	},
 	{
 		degree: 'Music High School Diploma',
