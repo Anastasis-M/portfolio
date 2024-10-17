@@ -72,11 +72,11 @@ const Assets = {
 	Ruvy: a('ruvy.svg'),
 	Postcss: a('postcss.svg'),
 	Prisma: a('prisma.svg'),
-	Unipi_logo: a('unipi_logo.png'),
+	Unipi_logo: a('unipi-logo.svg'),
 	Profile: a('profile.png'),
 	Supabase: a('supabase-logo-icon.png'),
 	OpenLayers: a('openlayers-logo.svg'),
-	MusicSchoolLogo: a('high-school-logo.png')
+	MusicSchoolLogo: a('high-school-logo.svg')
 };
 
 export default Assets;

@@ -55,13 +55,13 @@
 						<Card>
 							<div class="flex-1 col gap-2 items-stretch">
 								<div class="">
-									<div class="p-1 mb-5 rounded-[15px] bg-white w-fit overflow-hidden flex items-center justify-center">
+									<div class="p-1 mb-5 rounded-[15px] bg-white w-fit overflow-hidden flex items-center justify-center h-[50px] w-[50px]">
 										<img
 											src={getAssetURL(education.logo)}
 											alt={education.organization}
 											height="50"
 											width="50"
-											class="bg-white"
+											class=""
 										/>
 									</div>
 								</div>
