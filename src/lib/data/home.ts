@@ -13,7 +13,7 @@ export const links: Array<{ platform: Platform; link: string }> = [
 	{ platform: Platform.GitHub, link: 'https://github.com/Anastasis-M' },
 	{
 		platform: Platform.Linkedin,
-		link: 'https://www.linkedin.com/in/anastasios-m-294b34235/'
+		link: 'https://www.linkedin.com/in/anastasios-melachroinoudis'
 	},
 	{
 		platform: Platform.Twitter,
