@@ -1,74 +1,69 @@
-# Slick Portfolio With Svelte.
+# Anastasis's Portfolio
 
-Vercel-like style portfolio template for developers.
+My personal portfolio website built with SvelteKit, showcasing my projects, skills, and experience.
 
-[For a reference, check out my personal protfolio, slightly changed, but uses this template.](https://riadhadrani.github.io/RiadhAdrani)
+[View the live site](https://anastasis.dev)
 
-## Create
+## About This Project
 
-You can either clone or fork this repository :
+This portfolio is built using [Riadh Adrani's Slick Portfolio template](https://github.com/RiadhAdrani/slick-portfolio-svelte), which I've customized to fit my needs and style. I've made several enhancements and modifications to make it my own:
 
-### `fork`
+- **Multiple Date Ranges**: Enhanced the experience and project cards to support multiple date ranges for each entry
+- **Local Dependencies**: Replaced external dependencies with local implementations for better reliability
+- **Custom Content**: Added my personal projects, skills, and experience information
+- **Optimized Deployment**: Improved GitHub Actions workflow for more reliable deployments
 
-You can fork the project, maintaining a link to the original repo using the `fork` button.
+## Technologies Used
 
-![alt text](./screenshots/image.png)
+- **SvelteKit**: Fast, efficient framework for building web applications
+- **TypeScript**: For type safety and better developer experience
+- **UnoCSS**: Atomic CSS engine for styling
+- **GitHub Actions**: For automated deployment to GitHub Pages
 
-### `clone`
+## Features
 
-- using `git` :
+- **Responsive Design**: Works on devices of all sizes
+- **Dark/Light Mode**: Toggle between color schemes
+- **Project Showcase**: Detailed project cards
+- **Experience Timeline**: Chronological display of work experience
+- **Skills Section**: Visual representation of technical skills
+- **Resume**: Downloadable PDF of your resume
+
+## Local Development
+
+To run this project locally:
 
 ```bash
-# ssh
-git clone git@github.com:RiadhAdrani/slick-portfolio-svelte.git protfolio
+# Clone the repository
+git clone https://github.com/Anastasis-M/portfolio.git
+cd portfolio
 
-# https
-git clone https://github.com/RiadhAdrani/slick-portfolio-svelte.git protfolio
+# Install dependencies
+pnpm install
+
+# Start development server
+pnpm dev
 ```
 
-- using `degit` npm executable :
+## Customization
 
-```bash
-npx degit RiadhAdrani/slick-portfolio-svelte portfolio
-```
+The main data files are located in `src/lib/data/` and include:
 
-if you don't have `degit`, it will prompt you to accept, enter `y`.
+- `experience.ts`: Work experience entries
+- `projects.ts`: Project showcase entries
+- `skills.ts`: Technical skills and categories
+- `home.ts`: Main page content and links
 
-> You can add the main repo as another remote repo to maintain updates in the future.
->
-> ```bash
-> # ssh
-> git remote add main git@github.com:RiadhAdrani/slick-portfolio-svelte.git
-> ```
+Styles can be customized in `src/lib/index.scss`.
 
-## Adapt to your needs
+## Deployment
 
-If you want to use the template as it is, you can :
+This portfolio is automatically deployed to GitHub Pages using GitHub Actions. The workflow is configured in `.github/workflows/deploy.yml`.
 
-- update files in `src/lib/data` with your data.
-- update `src/lib/index.scss` for custom styling.
-- update `static/favicon.ico` to customize the tab's icon.
+### Troubleshooting
 
-Feel free to explore and hack the template to your needs if you feel like it.
+If you fork this repository and encounter deployment issues:
 
-## Deploy to GitHub pages
-
-Before deploying to `GitHub Pages`:
-
-- make sure to change the `base` parameter in `svelte.config.js`.
-- make sure to update the target branch of the `deploy.yml` file, it is set to build from `master` branch by default.
-- Allow `GitHub Pages` in your repo settings with correct permissions:
-  - Permissions:
-    - go to your repo `Settings` > `Actions` > `General`
-    - in `Actions permissions` : check `Allow all actions and reusable workflows`
-  - Pages:
-    - go to your repo's `Settings` > `Pages`
-    - in Source section, select `Deploy from a branch`.
-    - in Branch section, select `gh-pages` and `/ (root)` and click on save
-- push another commit (or an empty one).
-
-if you did all the above `CORRECTLY`, and no workflow was launched, try to push another commit (maybe an empty one), otherwise you can create an issue and link your repo.
-
-## Known issues:
-
-- Svelte no longer support `node 14`, use a newer version instead.
+1. Ensure GitHub Pages is enabled in your repository settings
+2. Check that the workflow has proper permissions to deploy
+3. Verify that the base path in `svelte.config.js` matches your repository name
