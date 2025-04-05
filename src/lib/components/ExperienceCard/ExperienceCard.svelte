@@ -13,17 +13,12 @@
 
 	export let experience: Experience;
 
-	// const months = getTimeDiff(experience.period.from, experience.period.to);
-	const exactDuration = computeExactDuration(experience.period.from, experience.period.to);
-
-	const from = `${getMonthName(
-		experience.period.from.getMonth()
-	)} ${experience.period.from.getFullYear()}`;
-	const to = experience.period.to
-		? `${getMonthName(experience.period.to.getMonth())} ${experience.period.to.getFullYear()}`
-		: 'Present';
-
-	const period = `${from} - ${to}`;
+	$: periods = experience.period.map(p => {
+		const from = `${getMonthName(p.from.getMonth())} ${p.from.getFullYear()}`;
+		const to = p.to ? `${getMonthName(p.to.getMonth())} ${p.to.getFullYear()}` : 'Present';
+		const duration = computeExactDuration(p.from, p.to);
+		return { from, to, duration };
+	});
 
 	$: info = [
 		{ label: experience.company, icon: 'i-carbon-building' },
@@ -57,17 +52,21 @@
 				</div>
 			</div>
 			<div class="text-[var(--text)] text-[0.9em]">
-				<div class="row items-center gap-2">
-					<UIcon icon="i-carbon-calendar" classes="text-1.25em" />
-					{period}
-				</div>
-				<CardDivider />
-				<div class="row items-center gap-2">
-					<UIcon icon="i-carbon-time" classes="text-1.25em" />
-					{exactDuration}
-				</div>
-				<CardDivider />
+				{#each periods as period}
+					<div class="row items-center gap-2 mb-2">
+						<UIcon icon="i-carbon-calendar" classes="text-1.25em" />
+						{period.from} - {period.to}
+					</div>
+					<div class="row items-center gap-2 mb-3">
+						<UIcon icon="i-carbon-time" classes="text-1.25em" />
+						{period.duration}
+					</div>
+					{#if period !== periods[periods.length - 1]}
+						<CardDivider />
+					{/if}
+				{/each}
 			</div>
+			<CardDivider />
 			<div class="experience-description text-[0.9em]">{experience.shortDescription}</div>
 			<div class="flex flex-row flex-wrap mt-5">
 				{#each experience.skills as skill}

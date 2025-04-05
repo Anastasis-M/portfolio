@@ -13,17 +13,15 @@
 	import UIcon from '../Icon/UIcon.svelte';
 
 	export let project: Project;
-	$: months = countMonths(project.period.from, project.period.to);
-	// $: period = `${months} month${months > 1 ? 's' : ''}`;
-	// $: period = `${getTimeDiff(
-	// 	project.period.from,
-	// 	project.period.to ?? new Date(Date.now() + 1000 * 60 * 60 * 24)
-	// )}`;
-	$: period = computeExactDuration(project.period.from, project.period.to);
-	$: from = `${getMonthName(project.period.from.getMonth())} ${project.period.from.getFullYear()}`;
-	$: to = project.period.to
-		? `${getMonthName(project.period.to.getMonth())} ${project.period.to.getFullYear()}`
-		: 'now';
+	$: periods = project.period.map(p => {
+		const from = `${getMonthName(p.from.getMonth())} ${p.from.getFullYear()}`;
+		const to = p.to ? `${getMonthName(p.to.getMonth())} ${p.to.getFullYear()}` : 'now';
+		const duration = computeExactDuration(p.from, p.to);
+		return { from, to, duration };
+	});
+	
+	// Use the first period for display in the card summary
+	$: firstPeriod = periods[0];
 </script>
 
 <Card color={project.color} href={`${base}/projects/${project.slug}`}>
@@ -45,7 +43,7 @@
 		<CardDivider />
 		<div class="row items-center gap-2">
 			<UIcon icon="i-carbon-time" classes="text-1.25em" />
-			<p>{period}</p>
+			<p>{firstPeriod.duration}</p>
 		</div>
 		<CardDivider />
 	</div>
@@ -55,9 +53,9 @@
 		</p>
 	</div>
 	<div class="row justify-between text-0.8em font-400">
-		<Chip>{from}</Chip>
-		{#if from !== to}
-			<Chip>{to}</Chip>
+		<Chip>{firstPeriod.from}</Chip>
+		{#if firstPeriod.from !== firstPeriod.to}
+			<Chip>{firstPeriod.to}</Chip>
 		{/if}
 	</div>
 	<CardDivider />

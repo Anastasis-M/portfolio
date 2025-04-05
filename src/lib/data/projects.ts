@@ -12,9 +12,9 @@ export const items: Array<Project> = [
 		links: [{ to: 'https://github.com/RiadhAdrani/slick-portfolio-svelte', label: 'GitHub' }],
 		logo: Assets.Profile,
 		name: 'Portfolio site',
-		period: {
+		period: [{
 			from: new Date('2024-09-11')
-		},
+		}],
 		skills: getSkills('svelte', 'ts', 'tailwind'),
 		type: 'Personal Project'
 	},
@@ -22,18 +22,32 @@ export const items: Array<Project> = [
 		slug: 'reforestation-platform',
 		color: '#15803d',
 		description:
-			'More when a prototype is ready...',
+			'I built a reforestation platform from scratch, learning to weave together SvelteKit, Shadcn Svelte, and Open Layers for the front end with a solid backend using Prisma and Supabase. I tackled real challenges like user authentication, data management, and interactive mapping, which was a great learning experience; a way to keep my skills up to date and learn new things.',
 		shortDescription:
-			'More when a prototype is ready...',
+			'Experimented with building a full-stack platform for dispalying reforestation projects.',
 		links: [
 			{ to: '', label: 'Website' }
 		],
 		logo: Assets.Unknown,
 		name: 'Reforestation Platform',
-		period: {
+		period: [{
 			from: new Date('2024-07-21')
-		},
+		}],
 		skills: getSkills('svelte', 'ts', 'tailwind', 'Prisma ORM', 'PostgreSQL', 'SupaBase', 'OpenLayers'),
+		type: 'Personal Project'
+	},
+	{
+		slug: 'media-converter-toolkit',
+		color: '#fff3e0',
+		description: 'Well I wanted to learn a bit more about react so I decided to build a media converter toolkit but with a catch, It\'s offline...oh and Vibe coded 😂',
+		shortDescription: 'A simple offline media converter toolkit so I don\'t have to use online or command line tools.',
+		links: [],
+		logo: Assets.Unknown,
+		name: 'Media Converter Toolkit',
+		period: [{
+			from: new Date('2025-03-31')
+		}],
+		skills: getSkills('react', 'ts', 'tailwind', 'nextjs'),
 		type: 'Personal Project'
 	}
 	// {

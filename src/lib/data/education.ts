@@ -12,7 +12,7 @@ export const items: Array<Education> = [
 		period: { from: new Date('2020-10'), to: new Date('2024-09-30')},
 		shortDescription: '',
 		slug: 'informatics-bcs',
-		subjects: ['JavaScript', 'Svelte', 'Tailwind', 'HTML', 'CSS', 'Databases', 'Algorithms', 'Data Structures', 'Java', 'Python', 'C++', 'C#', 'Unity'] // Replace or add more relevant subjects
+		subjects: ['JavaScript', 'Svelte', 'Tailwind', 'HTML', 'CSS', 'Databases', 'Algorithms', 'Data Structures', 'Java', 'Python', 'C++', 'C#', 'Unity', '.NET']
 	},
 	{
 		degree: 'Music High School Diploma',
@@ -24,7 +24,7 @@ export const items: Array<Education> = [
 		period: { from: new Date('2014-01-02'), to: new Date('2020')},
 		shortDescription: 'Completed a well-rounded education combining traditional academic subjects with specialized music training, including music theory, performance, and ensemble work.',
 		slug: 'music-high-school',
-		subjects: [] // Replace or add more relevant subjects
+		subjects: ['Music Theory', 'Performance', 'Ensemble Work', 'General High School Courses']
 	}
 	// {
 	// 	degree: 'Bachelor degree of Computer Science',

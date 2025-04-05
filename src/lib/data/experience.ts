@@ -10,7 +10,7 @@ export const items: Array<Experience> = [
 	// 	contract: ContractType.SelfEmployed,
 	// 	type: 'Software Development',
 	// 	location: 'Piraeus, Greece',
-	// 	period: { from: new Date('2020-10') }, 
+	// 	period: [{ from: new Date('2020-10') }], 
 	// 	skills: getSkills('svelte', 'tailwind', 'js', 'html', 'css', 'ts','PostgreSQL', 'Prisma ORM'),
 	// 	name: 'Aspiring Fullstack Developer',
 	// 	color: 'red',
@@ -25,7 +25,14 @@ export const items: Array<Experience> = [
 		contract: ContractType.SelfEmployed,
 		type: 'Maths',
 		location: 'Chalandri, Greece',
-		period: { from: new Date('2022-02'), to: new Date('2022-05'),}, 
+		period: [{
+			from: new Date('2022-02'), 
+			to: new Date('2022-05')
+		},
+		{
+			from: new Date('2022-08'),
+			to: new Date('2023-05')
+		}], 
 		skills: getSkills(''),
 		name: 'Private Math Lessons',
 		color: 'red',
@@ -40,7 +47,10 @@ export const items: Array<Experience> = [
 		contract: ContractType.Volunteer,
 		type: 'Maths',
 		location: 'Chios, Greece',
-		period: { from: new Date('2021-07-02'), to: new Date('2024-07'),}, 
+		period: [{
+			from: new Date('2021-07-02'), 
+			to: new Date('2024-07')
+		}], 
 		skills: getSkills(''),
 		name: 'Volunteer Camp Staff',
 		color: 'red',
@@ -57,7 +67,7 @@ export const items: Array<Experience> = [
 	// 	contract: ContractType.SelfEmployed,
 	// 	type: 'Software Development',
 	// 	location: 'Home',
-	// 	period: { from: new Date() },
+	// 	period: [{ from: new Date() }],
 	// 	skills: getSkills('ts', 'js'),
 	// 	name: 'Open Source Developer',
 	// 	color: 'red',
@@ -72,7 +82,7 @@ export const items: Array<Experience> = [
 	// 	contract: ContractType.Freelance,
 	// 	type: 'Software Development',
 	// 	location: 'Home',
-	// 	period: { from: new Date() },
+	// 	period: [{ from: new Date() }],
 	// 	skills:'blue',
 	// 	links: [],
 	// 	logo: Assets.Unknown,
@@ -85,7 +95,7 @@ export const items: Array<Experience> = [
 	// 	contract: ContractType.Freelance,
 	// 	type: 'Software Development',
 	// 	location: 'Home',
-	// 	period: { from: new Date(2022, 0, 1), to: new Date() },
+	// 	period: [{ from: new Date(2022, 0, 1), to: new Date() }],
 	// 	skills: getSkills('css', 'html', 'js'),
 	// 	name: 'Junior Freelancer',
 	// 	color: 'green',
