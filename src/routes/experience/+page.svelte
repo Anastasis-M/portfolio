@@ -4,7 +4,7 @@
 	import SearchPage from '$lib/components/SearchPage.svelte';
 	import { items, title } from '@data/experience';
 	import type { Experience } from '$lib/types';
-	import { isBlank } from '@riadh-adrani/utils';
+	import { isBlank } from '$lib/utils/adrani-utils';
 
 	let result: Array<Experience> = [...items];
 

@@ -6,7 +6,7 @@
 	import { links, description, lastName, name, title, skills } from '@data/home';
 	import { items as skillsItems } from '@data/skills';
 	import { useTitle } from '$lib/utils/helpers';
-	import { isBlank } from '@riadh-adrani/utils';
+	import { isBlank } from '$lib/utils/adrani-utils';
 	import { getPlatfromIcon } from '$lib/utils';
 
 	const isEmail = (email: string): boolean => {

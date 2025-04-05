@@ -1,7 +1,7 @@
 import Assets from './assets';
 import type { Skill, SkillCategory } from '../types';
 import svelte from '../md/svelte.md?raw';
-import { omit, type StringWithAutoComplete } from '@riadh-adrani/utils';
+import { omit, type StringWithAutoComplete } from '$lib/utils/adrani-utils';
 
 const defineSkillCategory = <S extends string>(data: SkillCategory<S>): SkillCategory<S> => data;
 
