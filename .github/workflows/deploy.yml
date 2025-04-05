@@ -23,7 +23,9 @@ jobs:
           # Configure npm registry with basic resilience settings
           pnpm config set fetch-retries 5
           pnpm config set network-timeout 300000
-          # Install with strict dependency versioning
+          # First run a regular install to update the lockfile
+          pnpm install
+          # Then run with frozen lockfile to ensure consistency
           pnpm install --frozen-lockfile
           pnpm build
           touch build/.nojekyll
