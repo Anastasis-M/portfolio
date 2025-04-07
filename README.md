@@ -26,6 +26,7 @@ This portfolio is built using [Riadh Adrani's Slick Portfolio template](https://
 - **Dark/Light Mode**: Toggle between color schemes
 - **Project Showcase**: Detailed project cards
 - **Experience Timeline**: Chronological display of work experience
+- **Education Section**: Overview of educational background
 - **Skills Section**: Visual representation of technical skills
 - **Resume**: Downloadable PDF of your resume
 
@@ -51,6 +52,7 @@ The main data files are located in `src/lib/data/` and include:
 
 - `experience.ts`: Work experience entries
 - `projects.ts`: Project showcase entries
+- `education.ts`: Educational background entries
 - `skills.ts`: Technical skills and categories
 - `home.ts`: Main page content and links
 

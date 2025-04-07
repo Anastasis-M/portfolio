@@ -76,7 +76,8 @@ const Assets = {
 	Profile: a('profile.png'),
 	Supabase: a('supabase-logo-icon.png'),
 	OpenLayers: a('openlayers-logo.svg'),
-	MusicSchoolLogo: a('high-school-logo.svg')
+	MusicSchoolLogo: a('high-school-logo.svg'),
+	NextJs: a('nextjs.svg'),
 };
 
 export default Assets;

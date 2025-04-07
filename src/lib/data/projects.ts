@@ -9,7 +9,7 @@ export const items: Array<Project> = [
 		description:
 			"When I was browsing through various sveltekit projects I found Riadh Adrani's svelte portfolio template. I liked the overall design and the way it was built, so I decided to adjust it to my needs. I updated some packeges added my information and images. In the future I may add more funtionality.",
 		shortDescription: "Adjusted Riadh Adrani's svelte portfolio template to my needs.",
-		links: [{ to: 'https://github.com/RiadhAdrani/slick-portfolio-svelte', label: 'GitHub' }],
+		links: [{ to: 'https://github.com/Anastasis-M/portfolio', label: 'GitHub' }],
 		logo: Assets.Profile,
 		name: 'Portfolio site',
 		period: [{
@@ -25,9 +25,7 @@ export const items: Array<Project> = [
 			'I built a reforestation platform from scratch, learning to weave together SvelteKit, Shadcn Svelte, and Open Layers for the front end with a solid backend using Prisma and Supabase. I tackled real challenges like user authentication, data management, and interactive mapping, which was a great learning experience; a way to keep my skills up to date and learn new things.',
 		shortDescription:
 			'Experimented with building a full-stack platform for dispalying reforestation projects.',
-		links: [
-			{ to: '', label: 'Website' }
-		],
+		links: [],
 		logo: Assets.Unknown,
 		name: 'Reforestation Platform',
 		period: [{
@@ -38,7 +36,7 @@ export const items: Array<Project> = [
 	},
 	{
 		slug: 'media-converter-toolkit',
-		color: '#fff3e0',
+		color: '#5e95e3',
 		description: 'Well I wanted to learn a bit more about react so I decided to build a media converter toolkit but with a catch, It\'s offline...oh and Vibe coded 😂',
 		shortDescription: 'A simple offline media converter toolkit so I don\'t have to use online or command line tools.',
 		links: [],
@@ -47,9 +45,26 @@ export const items: Array<Project> = [
 		period: [{
 			from: new Date('2025-03-31')
 		}],
-		skills: getSkills('react', 'ts', 'tailwind', 'nextjs'),
+		skills: getSkills('reactjs', 'ts', 'tailwind', 'nextjs'),
 		type: 'Personal Project'
-	}
+	},
+	{
+		slug: 'bsc-thesis',
+		color: '#6E2037',
+		description: 'This thesis presents the development of a product review web platform that enables users to submit, edit, and manage reviews for products purchased from any store. The platform allows users to browse reviews by category, with sorting options including price, ratings, alphabetical order, and location. Additionally, users can rate the helpfulness of others\' reviews, promoting the visibility of high-quality content. Each user has a personalized dashboard to oversee their reviews, favorite products, and profile information, enhancing user engagement and experience.',
+		shortDescription: 'Online platform for viewing, submitting, and managing reviews for various products.',
+		links: [
+			{ to: 'https://github.com/Anastasis-M/bsc-thesis', label: 'GitHub' }
+		],
+		logo: Assets.Unknown,
+		name: 'Bsc Thesis',
+		period: [{
+			from: new Date('2024-11'),
+			to: new Date('2025-09')
+		}],
+		skills: getSkills('svelte', 'ts', 'tailwind', 'Prisma ORM', 'PostgreSQL'),
+		type: 'Academic Project'
+	},
 	// {
 	// 	slug: 'slick-portfolio-angular',
 	// 	color: '#5e95e3',
