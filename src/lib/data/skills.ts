@@ -9,7 +9,7 @@ const categories = [
 	defineSkillCategory({ name: 'Programming Languages', id: 'pro-lang' }),
 	defineSkillCategory({ name: 'Frameworks', id: 'framework' }),
 	defineSkillCategory({ name: 'Libraries', id: 'library' }),
-	defineSkillCategory({ name: 'Langauges', id: 'lang' }),
+	defineSkillCategory({ name: 'Languages', id: 'lang' }),
 	defineSkillCategory({ name: 'Databases', id: 'db' }),
 	defineSkillCategory({ name: 'ORMs', id: 'orm' }),
 	defineSkillCategory({ name: 'DevOps', id: 'devops' }),
@@ -25,10 +25,12 @@ const defineSkill = <S extends string>(
 		category?: StringWithAutoComplete<(typeof categories)[number]['id']>;
 	}
 ): Skill<S> => {
-	const out: Skill<S> = omit(skill, 'category');
-	
-	// Create an ID from the name (lowercase, no spaces)
-	out.id = skill.name.toLowerCase().replace(/\s+/g, '') as S;
+	const base = omit(skill, 'category');
+
+	const out = {
+		...base,
+		id: skill.name.toLowerCase().replace(/\s+/g, '') as S
+	} as Skill<S>;
 
 	if (skill.category) {
 		out.category = categories.find((it) => it.id === skill.category);
@@ -95,42 +97,48 @@ export const items = [
 	}),
 	defineSkill({
 		color: 'pink',
-		description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent orci enim, congue sit amet justo eget, consequat sollicitudin libero.',
+		description:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent orci enim, congue sit amet justo eget, consequat sollicitudin libero.',
 		logo: Assets.Prisma,
 		name: 'Prisma ORM',
-		category: 'orm',
+		category: 'orm'
 	}),
 	defineSkill({
 		color: 'blue',
-		description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent orci enim, congue sit amet justo eget, consequat sollicitudin libero.',
+		description:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent orci enim, congue sit amet justo eget, consequat sollicitudin libero.',
 		logo: Assets.PostgreSQL,
 		name: 'PostgreSQL',
-		category: 'db',
+		category: 'db'
 	}),
 	defineSkill({
 		color: 'green',
-		description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent orci enim, congue sit amet justo eget, consequat sollicitudin libero.',
+		description:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent orci enim, congue sit amet justo eget, consequat sollicitudin libero.',
 		logo: Assets.Supabase,
 		name: 'SupaBase',
-		category: 'db',
+		category: 'db'
 	}),
 	defineSkill({
 		color: 'blue',
-		description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent orci enim, congue sit amet justo eget, consequat sollicitudin libero.',
+		description:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent orci enim, congue sit amet justo eget, consequat sollicitudin libero.',
 		logo: Assets.OpenLayers,
 		name: 'OpenLayers',
-		category: 'library',
+		category: 'library'
 	}),
 	defineSkill({
 		color: 'blue',
-		description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent orci enim, congue sit amet justo eget, consequat sollicitudin libero.',
+		description:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent orci enim, congue sit amet justo eget, consequat sollicitudin libero.',
 		logo: Assets.Tailwind,
 		name: 'Tailwind CSS',
 		category: 'markup-style'
 	}),
 	defineSkill({
 		color: 'blue',
-		description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent orci enim, congue sit amet justo eget, consequat sollicitudin libero.',
+		description:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent orci enim, congue sit amet justo eget, consequat sollicitudin libero.',
 		logo: Assets.NextJs,
 		name: 'Next Js',
 		category: 'framework'

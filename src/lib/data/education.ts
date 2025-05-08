@@ -11,7 +11,7 @@ export const items: Array<Education> = [
 		organization: 'University of Piraeus',
 		period: { from: new Date('2020-10'), to: new Date('2024-09-30')},
 		shortDescription: '',
-		slug: 'informatics-bcs',
+		id: 'informaticsbcs',
 		subjects: ['JavaScript', 'Svelte', 'Tailwind', 'HTML', 'CSS', 'Databases', 'Algorithms', 'Data Structures', 'Java', 'Python', 'C++', 'C#', 'Unity', '.NET']
 	},
 	{
@@ -23,33 +23,9 @@ export const items: Array<Education> = [
 		organization: 'Music School of Chios',
 		period: { from: new Date('2014-01-02'), to: new Date('2020')},
 		shortDescription: 'Completed a well-rounded education combining traditional academic subjects with specialized music training, including music theory, performance, and ensemble work.',
-		slug: 'music-high-school',
+		id: 'musichighschool',
 		subjects: ['Music Theory', 'Performance', 'Ensemble Work', 'General High School Courses']
 	}
-	// {
-	// 	degree: 'Bachelor degree of Computer Science',
-	// 	description: '',
-	// 	location: 'Tunisia',
-	// 	logo: Assets.Unknown,
-	// 	name: '',
-	// 	organization: 'ISTIC',
-	// 	period: { from: new Date(2020, 0, 1), to: new Date(2022, 5, 1) },
-	// 	shortDescription: '',
-	// 	slug: 'dummy-education-item',
-	// 	subjects: ['C', 'Algorithm', 'Algebra', 'Python', 'C++', 'Java', 'English']
-	// },
-	// {
-	// 	degree: 'PhD of Computer Science',
-	// 	description: '',
-	// 	location: 'USA',
-	// 	logo: Assets.Unknown,
-	// 	name: '',
-	// 	organization: 'MIT',
-	// 	period: { from: new Date(2023, 0, 1) },
-	// 	shortDescription: '',
-	// 	slug: 'dummy-education-item-2',
-	// 	subjects: ['Assembly', 'Rust', 'Computer Architecture', 'Algorithms and Data structures']
-	// }
 ];
 
 export const title = 'Education';
