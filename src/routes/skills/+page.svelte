@@ -24,7 +24,7 @@
 		</div>
 	{:else}
 		<div class="col mt-5 gap-7">
-			{#each result as group (group.category.slug)}
+			{#each result as group (group.category.id)}
 				<div class="col gap-5 mb-7">
 					<div class="row items-center gap-5">
 						<div class="bg-[var(--main-hover)] h-[1px] w-[20px]" />
@@ -32,7 +32,7 @@
 						<div class="flex-1 bg-[var(--main-hover)] h-[1px]" />
 					</div>
 					<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 lg:gap-5 ">
-						{#each group.items as skill (skill.slug)}
+						{#each group.items as skill (skill.id)}
 							<Card
 								classes={['decoration-none']}
 								tiltDegree={1}	

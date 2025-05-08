@@ -15,20 +15,20 @@
 	}
 
 	let filters: Array<SkillFilter> = skills.items.filter((it) => {
-		return items.some((project) => project.skills.some((skill) => skill.slug === it.slug));
+		return items.some((project) => project.skills.some((skill) => skill.id === it.id));
 	});
 
 	let search = '';
 	let displayed: Array<Project> = [];
 
-	const isSelected = (slug: string): boolean => {
-		return filters.some((item) => item.slug === slug && item.isSelected);
+	const isSelected = (id: string): boolean => {
+		return filters.some((item) => item.id === id && item.isSelected);
 	};
 
-	const onSelected = (slug: string) => {
+	const onSelected = (id: string) => {
 		filters = filters.map((tech) => {
-			if (tech.slug === slug) {
-				tech.isSelected = !isSelected(slug);
+			if (tech.id === id) {
+				tech.isSelected = !isSelected(id);
 			}
 
 			return tech;
@@ -40,7 +40,7 @@
 			const isFiltered =
 				filters.every((item) => !item.isSelected) ||
 				project.skills.some((tech) =>
-					filters.some((filter) => filter.isSelected && filter.slug === tech.slug)
+					filters.some((filter) => filter.isSelected && filter.id === tech.id)
 				);
 
 			const isSearched =
@@ -73,7 +73,7 @@
 <SearchPage {title} on:search={onSearch}>
 	<div class="projects-filters">
 		{#each filters as tech}
-			<Chip active={tech.isSelected} classes={'text-0.8em'} on:click={() => onSelected(tech.slug)}
+			<Chip active={tech.isSelected} classes={'text-0.8em'} on:click={() => onSelected(tech.id)}
 				>{tech.name}</Chip
 			>
 		{/each}

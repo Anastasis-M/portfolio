@@ -6,29 +6,32 @@ import { omit, type StringWithAutoComplete } from '$lib/utils/adrani-utils';
 const defineSkillCategory = <S extends string>(data: SkillCategory<S>): SkillCategory<S> => data;
 
 const categories = [
-	defineSkillCategory({ name: 'Programming Languages', slug: 'pro-lang' }),
-	defineSkillCategory({ name: 'Frameworks', slug: 'framework' }),
-	defineSkillCategory({ name: 'Libraries', slug: 'library' }),
-	defineSkillCategory({ name: 'Langauges', slug: 'lang' }),
-	defineSkillCategory({ name: 'Databases', slug: 'db' }),
-	defineSkillCategory({ name: 'ORMs', slug: 'orm' }),
-	defineSkillCategory({ name: 'DevOps', slug: 'devops' }),
-	defineSkillCategory({ name: 'Testing', slug: 'test' }),
-	defineSkillCategory({ name: 'Dev Tools', slug: 'devtools' }),
-	defineSkillCategory({ name: 'Markup & Style', slug: 'markup-style' }),
-	defineSkillCategory({ name: 'Design', slug: 'design' }),
-	defineSkillCategory({ name: 'Soft Skills', slug: 'soft' })
+	defineSkillCategory({ name: 'Programming Languages', id: 'pro-lang' }),
+	defineSkillCategory({ name: 'Frameworks', id: 'framework' }),
+	defineSkillCategory({ name: 'Libraries', id: 'library' }),
+	defineSkillCategory({ name: 'Langauges', id: 'lang' }),
+	defineSkillCategory({ name: 'Databases', id: 'db' }),
+	defineSkillCategory({ name: 'ORMs', id: 'orm' }),
+	defineSkillCategory({ name: 'DevOps', id: 'devops' }),
+	defineSkillCategory({ name: 'Testing', id: 'test' }),
+	defineSkillCategory({ name: 'Dev Tools', id: 'devtools' }),
+	defineSkillCategory({ name: 'Markup & Style', id: 'markup-style' }),
+	defineSkillCategory({ name: 'Design', id: 'design' }),
+	defineSkillCategory({ name: 'Soft Skills', id: 'soft' })
 ] as const;
 
 const defineSkill = <S extends string>(
-	skill: Omit<Skill<S>, 'category'> & {
-		category?: StringWithAutoComplete<(typeof categories)[number]['slug']>;
+	skill: Omit<Skill<S>, 'category' | 'id'> & {
+		category?: StringWithAutoComplete<(typeof categories)[number]['id']>;
 	}
 ): Skill<S> => {
 	const out: Skill<S> = omit(skill, 'category');
+	
+	// Create an ID from the name (lowercase, no spaces)
+	out.id = skill.name.toLowerCase().replace(/\s+/g, '') as S;
 
 	if (skill.category) {
-		out.category = categories.find((it) => it.slug === skill.category);
+		out.category = categories.find((it) => it.id === skill.category);
 	}
 
 	return out;
@@ -36,7 +39,6 @@ const defineSkill = <S extends string>(
 
 export const items = [
 	defineSkill({
-		slug: 'js',
 		color: 'yellow',
 		description:
 			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent orci enim, congue sit amet justo eget, consequat sollicitudin libero. Etiam iaculis lectus tempor, hendrerit enim in, luctus arcu. Maecenas id enim et nibh ullamcorper auctor ac eu est. Donec imperdiet, diam quis malesuada faucibus, nibh ex gravida sapien, posuere pharetra nunc libero tristique turpis. Sed egestas laoreet semper. In hac habitasse platea dictumst. Praesent vitae est nec felis maximus facilisis. Duis luctus dui id urna tristique varius. Ut vulputate leo arcu, non bibendum arcu pulvinar eget. Fusce semper elit ut congue lacinia. Suspendisse magna diam, tempus vitae interdum eget, dictum vitae nisl. Praesent quis fringilla tortor. Donec vitae sagittis dui.',
@@ -45,7 +47,6 @@ export const items = [
 		category: 'pro-lang'
 	}),
 	defineSkill({
-		slug: 'ts',
 		color: 'blue',
 		description:
 			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent orci enim, congue sit amet justo eget, consequat sollicitudin libero. Etiam iaculis lectus tempor, hendrerit enim in, luctus arcu. Maecenas id enim et nibh ullamcorper auctor ac eu est. Donec imperdiet, diam quis malesuada faucibus, nibh ex gravida sapien, posuere pharetra nunc libero tristique turpis. Sed egestas laoreet semper. In hac habitasse platea dictumst. Praesent vitae est nec felis maximus facilisis. Duis luctus dui id urna tristique varius. Ut vulputate leo arcu, non bibendum arcu pulvinar eget. Fusce semper elit ut congue lacinia. Suspendisse magna diam, tempus vitae interdum eget, dictum vitae nisl. Praesent quis fringilla tortor. Donec vitae sagittis dui.',
@@ -54,7 +55,6 @@ export const items = [
 		category: 'pro-lang'
 	}),
 	defineSkill({
-		slug: 'css',
 		color: 'blue',
 		description:
 			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent orci enim, congue sit amet justo eget, consequat sollicitudin libero. Etiam iaculis lectus tempor, hendrerit enim in, luctus arcu. Maecenas id enim et nibh ullamcorper auctor ac eu est. Donec imperdiet, diam quis malesuada faucibus, nibh ex gravida sapien, posuere pharetra nunc libero tristique turpis. Sed egestas laoreet semper. In hac habitasse platea dictumst. Praesent vitae est nec felis maximus facilisis. Duis luctus dui id urna tristique varius. Ut vulputate leo arcu, non bibendum arcu pulvinar eget. Fusce semper elit ut congue lacinia. Suspendisse magna diam, tempus vitae interdum eget, dictum vitae nisl. Praesent quis fringilla tortor. Donec vitae sagittis dui.',
@@ -63,7 +63,6 @@ export const items = [
 		category: 'markup-style'
 	}),
 	defineSkill({
-		slug: 'html',
 		color: 'orange',
 		description:
 			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent orci enim, congue sit amet justo eget, consequat sollicitudin libero. Etiam iaculis lectus tempor, hendrerit enim in, luctus arcu. Maecenas id enim et nibh ullamcorper auctor ac eu est. Donec imperdiet, diam quis malesuada faucibus, nibh ex gravida sapien, posuere pharetra nunc libero tristique turpis. Sed egestas laoreet semper. In hac habitasse platea dictumst. Praesent vitae est nec felis maximus facilisis. Duis luctus dui id urna tristique varius. Ut vulputate leo arcu, non bibendum arcu pulvinar eget. Fusce semper elit ut congue lacinia. Suspendisse magna diam, tempus vitae interdum eget, dictum vitae nisl. Praesent quis fringilla tortor. Donec vitae sagittis dui.',
@@ -72,7 +71,6 @@ export const items = [
 		category: 'markup-style'
 	}),
 	// defineSkill({
-	// 	slug: 'sass',
 	// 	color: 'pink',
 	// 	description:
 	// 		'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent orci enim, congue sit amet justo eget, consequat sollicitudin libero. Etiam iaculis lectus tempor, hendrerit enim in, luctus arcu. Maecenas id enim et nibh ullamcorper auctor ac eu est. Donec imperdiet, diam quis malesuada faucibus, nibh ex gravida sapien, posuere pharetra nunc libero tristique turpis. Sed egestas laoreet semper. In hac habitasse platea dictumst. Praesent vitae est nec felis maximus facilisis. Duis luctus dui id urna tristique varius. Ut vulputate leo arcu, non bibendum arcu pulvinar eget. Fusce semper elit ut congue lacinia. Suspendisse magna diam, tempus vitae interdum eget, dictum vitae nisl. Praesent quis fringilla tortor. Donec vitae sagittis dui.',
@@ -81,7 +79,6 @@ export const items = [
 	// 	category: 'markup-style'
 	// }),
 	defineSkill({
-		slug: 'reactjs',
 		color: 'cyan',
 		description:
 			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent orci enim, congue sit amet justo eget, consequat sollicitudin libero. Etiam iaculis lectus tempor, hendrerit enim in, luctus arcu. Maecenas id enim et nibh ullamcorper auctor ac eu est. Donec imperdiet, diam quis malesuada faucibus, nibh ex gravida sapien, posuere pharetra nunc libero tristique turpis. Sed egestas laoreet semper. In hac habitasse platea dictumst. Praesent vitae est nec felis maximus facilisis. Duis luctus dui id urna tristique varius. Ut vulputate leo arcu, non bibendum arcu pulvinar eget. Fusce semper elit ut congue lacinia. Suspendisse magna diam, tempus vitae interdum eget, dictum vitae nisl. Praesent quis fringilla tortor. Donec vitae sagittis dui.',
@@ -90,7 +87,6 @@ export const items = [
 		category: 'library'
 	}),
 	defineSkill({
-		slug: 'svelte',
 		color: 'orange',
 		description: svelte,
 		logo: Assets.Svelte,
@@ -98,7 +94,6 @@ export const items = [
 		category: 'library'
 	}),
 	defineSkill({
-		slug: 'Prisma ORM',
 		color: 'pink',
 		description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent orci enim, congue sit amet justo eget, consequat sollicitudin libero.',
 		logo: Assets.Prisma,
@@ -106,7 +101,6 @@ export const items = [
 		category: 'orm',
 	}),
 	defineSkill({
-		slug: 'PostgreSQL',
 		color: 'blue',
 		description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent orci enim, congue sit amet justo eget, consequat sollicitudin libero.',
 		logo: Assets.PostgreSQL,
@@ -114,7 +108,6 @@ export const items = [
 		category: 'db',
 	}),
 	defineSkill({
-		slug: 'SupaBase',
 		color: 'green',
 		description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent orci enim, congue sit amet justo eget, consequat sollicitudin libero.',
 		logo: Assets.Supabase,
@@ -122,7 +115,6 @@ export const items = [
 		category: 'db',
 	}),
 	defineSkill({
-		slug: 'OpenLayers',
 		color: 'blue',
 		description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent orci enim, congue sit amet justo eget, consequat sollicitudin libero.',
 		logo: Assets.OpenLayers,
@@ -130,7 +122,6 @@ export const items = [
 		category: 'library',
 	}),
 	defineSkill({
-		slug: 'tailwind',
 		color: 'blue',
 		description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent orci enim, congue sit amet justo eget, consequat sollicitudin libero.',
 		logo: Assets.Tailwind,
@@ -138,7 +129,6 @@ export const items = [
 		category: 'markup-style'
 	}),
 	defineSkill({
-		slug: 'nextjs',
 		color: 'blue',
 		description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent orci enim, congue sit amet justo eget, consequat sollicitudin libero.',
 		logo: Assets.NextJs,
@@ -150,8 +140,8 @@ export const items = [
 export const title = 'Skills';
 
 export const getSkills = (
-	...slugs: Array<StringWithAutoComplete<(typeof items)[number]['slug']>>
-): Array<Skill> => items.filter((it) => slugs.includes(it.slug));
+	...names: Array<StringWithAutoComplete<(typeof items)[number]['name']>>
+): Array<Skill> => items.filter((it) => names.includes(it.name));
 
 export const groupByCategory = (
 	query: string
@@ -170,7 +160,7 @@ export const groupByCategory = (
 		}
 
 		// check if category exists
-		let category = out.find((it) => it.category.slug === item.category?.slug);
+		let category = out.find((it) => it.category.id === item.category?.id);
 
 		if (!category) {
 			category = { items: [], category: item.category };
@@ -182,7 +172,7 @@ export const groupByCategory = (
 	});
 
 	if (others.length !== 0) {
-		out.push({ category: { name: 'Others', slug: 'others' }, items: others });
+		out.push({ category: { name: 'Others', id: 'others' }, items: others });
 	}
 
 	return out;

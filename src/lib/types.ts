@@ -25,7 +25,7 @@ export enum ContractType {
 export type Asset = string | { light: string; dark: string };
 
 export interface Item<S extends string = string> {
-	slug: S;
+	id: S;
 	name: string;
 	logo: Asset;
 	shortDescription: string;
@@ -44,7 +44,7 @@ export interface IconLink extends Link {
 }
 
 export interface SkillCategory<S extends string = string> {
-	slug: S;
+	id: S;
 	name: string;
 }
 

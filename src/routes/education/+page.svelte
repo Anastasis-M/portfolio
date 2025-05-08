@@ -41,7 +41,7 @@
 			<div
 				class="w-[0.5px] hidden lg:flex top-0 bottom-0 py-50px bg-[var(--border)] absolute rounded"
 			/>
-			{#each result as education, index (education.slug)}
+			{#each result as education, index (education.id)}
 				<div
 					class={`flex ${
 						index % 2 !== 0 ? 'flex-row' : 'flex-row-reverse'
