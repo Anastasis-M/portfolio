@@ -24,7 +24,7 @@
 	$: firstPeriod = periods[0];
 </script>
 
-<Card color={project.color} href={`${base}/projects/${project.slug}`}>
+<Card color={project.color}>
 	<CardLogo alt={project.name} src={getAssetURL(project.logo)} size={40} radius={'10px'} />
 	<div class="m-t-20px row justify-between items-center">
 		<CardTitle title={project.name} />
