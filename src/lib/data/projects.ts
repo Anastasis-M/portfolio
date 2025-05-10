@@ -34,20 +34,20 @@ export const items: Array<Project> = [
 		skills: getSkills('Svelte', 'Typescript', 'Tailwind CSS', 'Prisma ORM', 'PostgreSQL', 'SupaBase', 'OpenLayers'),
 		type: 'Personal Project'
 	},
-	{
-		id: 'mediaconvertertoolkit',
-		color: '#5e95e3',
-		description: 'Well I wanted to learn a bit more about react so I decided to build a media converter toolkit but with a catch, It\'s offline...oh and Vibe coded 😂',
-		shortDescription: 'A simple offline media converter toolkit so I don\'t have to use online or command line tools.',
-		links: [],
-		logo: Assets.Unknown,
-		name: 'Media Converter Toolkit',
-		period: [{
-			from: new Date('2025-03-31')
-		}],
-		skills: getSkills('React Js', 'Typescript', 'Tailwind CSS', 'Next Js'),
-		type: 'Personal Project'
-	},
+	// {
+	// 	id: 'mediaconvertertoolkit',
+	// 	color: '#5e95e3',
+	// 	description: 'Well I wanted to learn a bit more about react so I decided to build a media converter toolkit but with a catch, It\'s offline...oh and Vibe coded 😂',
+	// 	shortDescription: 'A simple offline media converter toolkit so I don\'t have to use online or command line tools.',
+	// 	links: [],
+	// 	logo: Assets.Unknown,
+	// 	name: 'Media Converter Toolkit',
+	// 	period: [{
+	// 		from: new Date('2025-03-31')
+	// 	}],
+	// 	skills: getSkills('React Js', 'Typescript', 'Tailwind CSS', 'Next Js'),
+	// 	type: 'Personal Project'
+	// },
 	{
 		id: 'bscthesis',
 		color: '#6E2037',
